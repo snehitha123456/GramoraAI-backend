@@ -2,18 +2,18 @@
 
 **AI-Powered Rural Grocery Delivery & Intelligent Inventory Management System**
 
-Gramora AI is a backend application designed to support rural grocery delivery and inventory management. It provides APIs for managing grocery products, shopping carts, customer orders, delivery tracking, and inventory-related features.
+Gramora AI is a Spring Boot backend for rural grocery delivery, product management, customer orders, delivery tracking, and inventory management.
 
 ## 🚀 Features
 
-- **Product Management** — Retrieve and manage grocery products.
-- **Shopping Cart** — Support grocery cart operations and order totals.
-- **Order Management** — Place orders and store order details.
-- **Delivery Charges** — Free delivery on orders of ₹99 or more; ₹10 delivery charge below ₹99.
-- **Order Tracking** — Track order details using an order ID.
-- **Inventory Management** — Support stock-related operations and inventory insights.
-- **Database Integration** — Store application data using MySQL.
-- **REST APIs** — Connect the backend with the React frontend.
+- Product management
+- Shopping cart and order totals
+- Order creation and tracking
+- Free delivery for orders of ₹99 or more
+- ₹10 delivery charge for orders below ₹99
+- Inventory management
+- MySQL database integration
+- REST APIs for the React frontend
 
 ## 🛠️ Technology Stack
 
@@ -22,7 +22,7 @@ Gramora AI is a backend application designed to support rural grocery delivery a
 - Maven
 - MySQL 8
 - REST APIs
-- React and Vite (frontend integration)
+- React and Vite frontend integration
 
 ## 📁 Project Structure
 
@@ -32,51 +32,44 @@ gramora-backend/
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   └── resources/
-│   └── test/
-└── README.md
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── com/gramora/gramora_backend/
+    │   │       ├── controller/
+    │   │       ├── model/
+    │   │       ├── repository/
+    │   │       ├── service/
+    │   │       └── GramoraBackendApplication.java
+    │   └── resources/
+    │       └── application.properties
+    └── test/
 ```
 
 ## ⚙️ Prerequisites
 
-Install the following before running the application:
-
 - Java Development Kit (JDK) 21
-- MySQL 8
+- MySQL, if using a MySQL database
 - Git
 - Visual Studio Code or another Java IDE
 
 ## 🗄️ Database Configuration
 
-1. Start your MySQL server.
-2. Create a database named `gramora_ai` if it does not already exist.
-3. Configure the database URL, username, and password in your local Spring Boot configuration.
+The application uses environment variables for database configuration.
 
-Example database URL:
+Example local settings:
 
-```text
-jdbc:mysql://localhost:3306/gramora_ai
+```properties
+DB_URL=jdbc:mysql://localhost:3306/gramora_ai
+DB_USERNAME=root
+DB_PASSWORD=your_local_password
 ```
 
-**Security note:** Never upload real database passwords, API keys, or other credentials to a public repository. Use environment variables or a local configuration file for secrets.
+Use your own database credentials. Never commit real passwords or secrets to GitHub.
 
 ## ▶️ How to Run
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/ayeshaayshu2101-boop/GramoraAI-backend.git
-cd GramoraAI-backend
-```
-
-### 2. Configure MySQL
-
-Ensure MySQL is running and your database credentials are configured correctly.
-
-### 3. Start the backend
+Open a terminal in the `gramora-backend` directory.
 
 On Windows, run:
 
@@ -84,24 +77,16 @@ On Windows, run:
 .\mvnw.cmd spring-boot:run
 ```
 
-The application is configured to run on port `8080` unless changed in the application configuration.
+The backend is configured to use port `8080`, unless changed in the application settings.
 
-### 4. Connect the frontend
+## 🔗 Frontend Integration
 
-Start the Gramora AI React frontend separately and configure it to communicate with the backend API.
-
-## 🧪 Testing
-
-Use a browser, Postman, or another API client to test the backend endpoints. The available endpoints depend on the controllers implemented in the project.
+Run the Gramora AI React frontend separately and configure its API URL to point to the backend.
 
 ## 🎯 Project Objective
 
-The objective of Gramora AI is to make grocery ordering more convenient for rural communities while supporting better inventory management and reducing avoidable stock waste.
-
-## 👩‍💻 Developer
-
-**Ayesha — GitHub:** [@ayeshaayshu2101-boop](https://github.com/ayeshaayshu2101-boop)
+Gramora AI aims to make grocery ordering more convenient for rural communities while supporting inventory management and reducing avoidable stock waste.
 
 ## 📄 License
 
-This project is currently intended for educational and demonstration purposes. Add a license if you plan to distribute or reuse the project publicly.
+This project is intended for educational and demonstration purposes.
